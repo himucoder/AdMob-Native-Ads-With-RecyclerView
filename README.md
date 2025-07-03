@@ -14,7 +14,7 @@ recyclerView = findViewById(R.id.recyclerView);
 myRecyclerView = new MyRecyclerView();
 recyclerView.setAdapter(myRecyclerView);
 recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-⚙️ 2️⃣ Data Structure
+## ⚙️ 2️⃣ Data Structure
 Two ArrayLists:
 
 arrayList → Holds raw JSON data (images/videos).
@@ -28,7 +28,7 @@ itemType = "image", "video", or "NATIVE_AD_VIEW"
 
 imageidname, loadimage, videocaption, loadvideo, etc.
 
-⚙️ 3️⃣ Load JSON Data
+## ⚙️ 3️⃣ Load JSON Data
 Uses Volley to fetch JSON from server.
 
 Parses images and videos.
@@ -45,7 +45,7 @@ if(x > 1 && x % 5 == 0){
     hashMap.put("itemType", "NATIVE_AD_VIEW");
     finalarrayList.add(hashMap);
 }
-⚙️ 4️⃣ Adapter: Multiple View Types
+## ⚙️ 4️⃣ Adapter: Multiple View Types
 ✅ getItemViewType()
 Checks itemType in the HashMap.
 
@@ -87,7 +87,7 @@ AdLoader adLoader = new AdLoader.Builder(context, getString(R.string.native_add_
    .build();
 
 adLoader.loadAd(new AdRequest.Builder().build());
-⚙️ 5️⃣ Layout
+## ⚙️ 5️⃣ Layout
 native_ad_layout.xml must include:
 
 xml
@@ -96,5 +96,5 @@ Edit
 <com.google.android.ads.nativetemplates.TemplateView
     android:id="@+id/my_template"
     ... />
-⚙️ 6️⃣ Final Flow
+## ⚙️ 6️⃣ Final Flow
 ✅ App launch → fetch JSON → build arrayList → insert native ad placeholder every 5 items → build finalarrayList → pass to Adapter → Adapter shows images/videos/ads dynamically.
